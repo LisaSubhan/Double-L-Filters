@@ -1,103 +1,291 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navbar */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Bar */
 header {
-    background: #0a3d62;
-    color: white;
-    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav {
+.nav-container {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: auto;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
     text-decoration: none;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(to right, #00a8ff, #4cd137);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-.hero button {
-    margin-top: 20px;
-    padding: 10px 25px;
-    border: none;
-    background: white;
-    color: #00a8ff;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
+.nav-links a:hover {
+    color: #3498db;
 }
 
-/* Products */
-.products {
-    padding: 50px;
-    text-align: center;
+/* Product Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
 
-.product-box {
+/* Product Images */
+.image-gallery {
     display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-image {
+    width: 100%;
+    height: 450px;
+    background-color: #eaeaea;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 18px;
+    color: #888;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    flex: 1;
+    height: 80px;
+    background-color: #eaeaea;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.thumbnail:hover {
+    opacity: 0.8;
+    border: 2px solid #3498db;
+}
+
+/* Product Info */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #95a5a6;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.rating {
+    color: #f1c40f;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.rating span {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.current-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.original-price {
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.short-description {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Options & Actions */
+.options-section {
+    margin-bottom: 25px;
+}
+
+.option-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.size-picker {
+    display: flex;
+    gap: 10px;
+}
+
+.size-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.size-btn:hover, .size-btn.active {
+    border-color: #3498db;
+    color: #3498db;
+    background-color: #f0f7fc;
+}
+
+.quantity-cart-row {
+    display: flex;
     gap: 20px;
     margin-top: 30px;
 }
 
-.card {
-    background: #f1f2f6;
-    padding: 25px;
-    width: 220px;
-    border-radius: 10px;
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-/* Benefits */
-.benefits {
-    background: #dff9fb;
-    padding: 40px;
+.qty-btn {
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.qty-input {
+    width: 40px;
     text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.benefits ul {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.benefits li {
-    margin: 10px 0;
-}
-
-/* About & Contact */
-.about, .contact {
-    padding: 40px;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    background: #0a3d62;
-    color: white;
-    text-align: center;
+.add-to-cart-btn {
+    flex-grow: 1;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
     padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Tabs Section */
+.product-tabs {
+    margin-top: 50px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.tab-headers {
+    display: flex;
+    border-bottom: 2px solid #eceff1;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #7f8c8d;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-link.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.tab-content {
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .main-image {
+        height: 300px;
+    }
 }

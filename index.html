@@ -2,69 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Double L Filters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Product Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <h1 class="logo">Double L Filters</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero">
-    <h2>Water But Better</h2>
-    <p>Affordale water filter system that is with you everywhere to quench your thrist</p>
-    <button>Shop Now</button>
-</section>
-
-<section class="products">
-    <h2>Our Filters</h2>
-    <div class="product-box">
-        <div class="card">
-            <h3>Home Filter</h3>
-            <p>Perfect for everyday household use.</p>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">BizName</a>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
         </div>
-        <div class="card">
-            <h3>Portable water bottle filter</h3>
-            <p>Clean water on the go.</p>
+    </header>
+
+    <main class="container">
+        
+        <div class="product-grid">
+            
+            <div class="image-gallery">
+                <div class="main-image">
+                    Product Image Placeholder
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail">View 1</div>
+                    <div class="thumbnail">View 2</div>
+                    <div class="thumbnail">View 3</div>
+                    <div class="thumbnail">View 4</div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="brand">Premium Collection</span>
+                <h1 class="product-title">Minimalist Ergonomic Desk Chair</h1>
+                
+                <div class="rating">
+                    ★★★★☆ <span>(48 customer reviews)</span>
+                </div>
+
+                <div class="price-box">
+                    <span class="current-price">$249.00</span>
+                    <span class="original-price">$319.00</span>
+                </div>
+
+                <p class="short-description">
+                    Upgrade your workspace with our premium ergonomic desk chair. Designed for ultimate lumbar support, breathability, and sleek modern aesthetics that fit any home or corporate office perfectly.
+                </p>
+
+                <div class="options-section">
+                    <div class="option-title">Select Frame Size</div>
+                    <div class="size-picker">
+                        <button class="size-btn">Standard</button>
+                        <button class="size-btn active">Plus Size</button>
+                    </div>
+                </div>
+
+                <div class="quantity-cart-row">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="decrementValue()">-</button>
+                        <input type="text" id="quantity" value="1" class="qty-input" readonly>
+                        <button class="qty-btn" onclick="incrementValue()">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
         </div>
-        <div class="card">
-            <h3>Under-The Sink System</h3>
-            <p>Clean water every day, all day</p>
+
+        <div class="product-tabs">
+            <div class="tab-headers">
+                <div class="tab-link active">Description</div>
+                <div class="tab-link">Specifications</div>
+            </div>
+            <div class="tab-content">
+                <p>Features high-density memory foam padding, an adjustable mesh back, dynamic tilt-lock mechanism, and heavy-duty smooth-rolling casters. Engineered to promote better posture and reduce fatigue over long hours of work or gaming sessions.</p>
+            </div>
         </div>
-    </div>
-</section>
 
-<section class="benefits">
-    <h2>Why Choose Us?</h2>
-    <ul>
-        <li>✔ Removes harmful contaminants</li>
-        <li>✔ Improves taste and odor</li>
-        <li>✔ Eco-friendly & cost-effective</li>
-    </ul>
-</section>
+    </main>
 
-<section class="about">
-    <h2>About Double L Filters</h2>
-    <p>We a provide reliable and affordable water filtration systems designed to keep your water safe and pure.</p>
-</section>
+    <script>
+        function incrementValue() {
+            var value = parseInt(document.getElementById('quantity').value, 10);
+            value = isNaN(value) ? 1 : value;
+            value++;
+            document.getElementById('quantity').value = value;
+        }
 
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: DoubleLFilters@gmail.com</p>
-</section>
-
-<footer>
-    <p>Double L Filters</p>
-</footer>
+        function decrementValue() {
+            var value = parseInt(document.getElementById('quantity').value, 10);
+            value = isNaN(value) ? 1 : value;
+            if(value > 1){
+                value--;
+                document.getElementById('quantity').value = value;
+            }
+        }
+    </script>
 
 </body>
 </html>
